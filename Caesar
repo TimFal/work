@@ -1,0 +1,22 @@
+# Шифр Цезаря
+
+
+# Шифр Цезаря — это вид шифра подстановки, в котором каждый символ в открытом тексте заменяется символом,
+# находящимся на некотором постоянном числе позиций левее или правее него в алфавите.
+
+alphabet = "abcdefghiklmnopqrstuvwxyzabcdefghiklmnopqrstuvwxyz"
+your_word = input("Введите ваше слово ")
+key = int(input("Введите число от 1 до 25 "))
+your_word = your_word.lower()
+new_word = ""
+for letter in your_word:
+    position = alphabet.find(letter)  # finding position of letter in list alphabet
+    new_position = position + key  # giving a position to letter
+    if letter in alphabet :
+        new_word = new_word + alphabet[new_position]  # your new word
+    else:
+        new_word = new_word + letter  # prints letter,if your word doesn't have letters (,.;/\)
+
+print(new_word)
+
+
